@@ -1,0 +1,36 @@
+## 🔍 Overview
+
+- **Master VM** (Ubuntu 24.04 LTS in a VM):  
+  - **Mosquitto** MQTT broker (commands ↔ telemetry)  
+  - **Node‑RED** flow engine + Dashboard HMI (recipe editor, live charts, start/stop)  
+  - **InfluxDB** for time‑series telemetry storage  
+  - (Optional) **Grafana** for richer historical dashboards  
+
+- **Slave Nodes** (Raspberry Pi or Windows PC):  
+  - Subscribe to `plant/<node_id>/cmd`  
+  - Execute commands (stir, pump, temp control) via GPIO or simulated code  
+  - Publish telemetry to `plant/<node_id>/telemetry/<metric>`  
+
+---
+
+## ⚙️ Prerequisites
+
+- **Master VM**  
+  - Ubuntu Server 24.04 LTS  
+  - 2 vCPU, ≥2 GB RAM, ≥20 GB disk  
+  - Docker or native installs of Mosquitto, Node‑RED, InfluxDB (and Grafana)  
+
+- **Slave Node**  
+  - Python 3.8+ (Windows) *or* Raspberry Pi OS with Python/Node‑RED + GPIO libraries  
+  - `pip install paho-mqtt` (for Python dummy node)  
+  - MQTT network connectivity to Master (port 1883)
+
+---
+
+## 🚀 Master Node Setup
+
+1. **Install & Configure Mosquitto**  
+   ```bash
+   sudo apt install mosquitto mosquitto-clients
+   sudo sed -i 's/^#listener 1883/listener 1883/' /etc/mosquitto/mosquitto.conf
+   sudo systemctl enable --now mosquitto
