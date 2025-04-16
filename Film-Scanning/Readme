@@ -1,1 +1,36 @@
+# Film-Scanning
 
+A simple Arduino-based remote shutter and Kodak 4600(or similar side  projector) 3D-printed slide holder for scanning 35mm film slides using a DSLR and a macro lens.
+
+This project includes:
+- Arduino code to automate shutter triggering and  for batches of 40 slides.
+- 3D printable STL files for a slide container and lid.
+- Photos of the setup and sample scans.
+
+---
+
+#💡 Requirements
+
+- Camera with remote shutter port
+- Macro lens. I used a 105mm f/2.8 D on a d500 giving a roughly 160mm equivalent focal length. 
+- Kodak 4600 slide projector. Other models and brands will also work, what you are lookig for is something with a removable len and a trigger port. You can use one without a trigger port by soldering directly to the slide advance button.
+- Kodak stack loader
+- Stable tripod
+- Arduino Uno (or compatible)
+- 1x momentary pushbutton
+- 1x NPN transistor (e.g. S8050)
+- 1x 1kΩ resistor
+- 3D printer for container and lid. You get these with Cabin-Film store with purchase of a bulk slide digitizing service. 
+# Optional
+- Diffusing film. Whiile not required it is highly recomended to use a defusing layer between the bulb and the slide to prevent a halo/hotspot on the digitized slides. Examples of with and without diffusing layer in example photos. 
+---
+
+# 🚀 Getting Started
+
+1. Print the STL files in the `STL/` folder.
+2. Wire up your Arduino and upload the code from `Code/`. There is an option for bracketing photos or single exposures. Depending on the dynamic range of the camera you are using you may or may not need bracketing. 
+3. Power on the camera and projector
+4. Place up to 40 slides into the stack loader. If you use less than 40 slides and do not modify the code to match the number of slides you will get blank pictures as well.
+5. Press the button to begin scanning.
+6. Remove slides from stack loader and return them to slide tray or boxes
+7. Repeat steps 4 through 6 as many times as needed 
