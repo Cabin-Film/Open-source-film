@@ -1,9 +1,9 @@
 # Film-Scanning
 
-A simple Arduino-based remote shutter and Kodak 4600(or similar side  projector) 3D-printed slide holder for scanning 35mm film slides using a DSLR and a macro lens.
+A simple Arduino-based scanning setup for 35mm film slides. 
 
 This project includes:
-- Arduino code to automate shutter triggering and  for batches of 40 slides.
+- Arduino code to automate shutter triggering and slide advancingfor batches of 40 slides.
 - 3D printable STL files for a slide container and lid.
 - Photos of the setup and sample scans.
 
@@ -23,6 +23,7 @@ This project includes:
 - 3D printer for container and lid. You get these with Cabin-Film store with purchase of a bulk slide digitizing service. 
 # Optional
 - Diffusing film. Whiile not required it is highly recomended to use a defusing layer between the bulb and the slide to prevent a halo/hotspot on the digitized slides. Examples of with and without diffusing layer in example photos. 
+
 ---
 
 # 🚀 Getting Started
