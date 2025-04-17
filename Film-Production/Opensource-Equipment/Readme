@@ -27,3 +27,30 @@
 
 ## 🚀 Master Node Setup
 Import OVA
+
+
+📁 Folder Structure
+osf/
+├── syringe_pump_mqtt_agent.py
+└── tip_profiles/
+    └── 14g.csv
+    └── 18g.csv
+    └── 21g.csv
+    └── 23g.csv
+
+📄 Example tip_profiles/18g.csv:
+ml_per_min,rpm
+5,20
+10,40
+15,60
+20,80
+
+🛰️ Example MQTT command:
+{
+  "flow": {
+    "rate": 15,
+    "tip": "18g",
+    "units": "ml_per_min",
+    "duration": 30
+  }
+}
